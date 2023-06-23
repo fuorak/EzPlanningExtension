@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+
+  "name": "EZ Planner Extension",
+  "version": "0.1.0",
+  "description": "Planner extension to make the netsuite UI a little friendlier",
+
+  "content_scripts": [
+    {
+      "css": [ "styles.css" ],
+      "js": [ "content.js" ],
+      "matches": [ "https://3381659.app.netsuite.com/app/accounting/transactions/estimate.nl?id=*" ]
+    }
+  ]
+
+}
