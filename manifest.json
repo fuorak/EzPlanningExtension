@@ -1,20 +1,26 @@
 {
+  "author": "Matt Goetz",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "js": [ "popup.js" ],
+      "matches": [ "https://3381659.app.netsuite.com/app/accounting/transactions/salesord.nl?id=*" ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "content.js",
+    "type": "module"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_title": "Planning Extension"
   },
-  "author": "Matt Goetz",
-  "content_scripts": [
-    {
-      "js": [ "content.js" ],
-      "matches": [ "https://3381659.app.netsuite.com/app/accounting/transactions/salesord.nl?id=*" ]
-    }
-  ],
-  "permissions": [
-    "activeTab"
-  ],
   "description": "Planner extension to make the netsuite UI a little friendlier",
   "manifest_version": 3,
   "name": "EZ Planner Extension",
-  "version": "0.1.1"
+  "version": "0.1.5"
 }
